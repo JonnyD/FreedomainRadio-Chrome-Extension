@@ -1,0 +1,176 @@
+/*
+    The Freedomain Radio Extension for Google Chrome
+    Author: Jonathan Devine <jonny.irl@gmail.com>
+    License: GPLv3
+*/
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color:#FFF;
+}
+#logo:hover
+{
+	cursor: pointer;
+}
+.link {
+	width: 215px;
+	float: left;
+	height: 70px;
+}
+.nav {
+	background-color: #F20000;
+	width: auto;
+	float: left;
+	padding: 5px 5px 5px 5px;
+	font-size: 15px;
+	height: 20px;
+	background-image: url(../img/nav.png);
+	background-repeat: repeat-x;
+	background-position: top;
+	list-style-type: none;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #333;
+}
+.nav:hover {
+	background-color: #000;
+	width: auto;
+	float: left;
+	padding: 5px;
+	font-size: 15px;
+	height: 20px;
+	background-image: url(../img/nav-2.png);
+	background-repeat: repeat-x;
+	background-position: top;
+	list-style-type: none;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #333;
+}
+.nav-bar {
+	width: 480px;
+	height: 30px;
+	background-image: url(../img/nav.png);
+	background-repeat: repeat-x;
+	background-position: top;
+	background-color: #000;
+}
+a {
+    color: #0099CC;
+}
+a:link {
+	color: #0099CC;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #0099CC;
+}
+a:active {
+	text-decoration: none;
+	color: #0099CC;
+}
+#content {
+  margin-top: 87px;
+    width: 460px;
+}
+
+.item {
+	margin-top:0px;
+	margin-left:0px;
+	width:460px;
+}
+
+.title {
+	font-size:18px;
+	margin-bottom: 3px;
+	line-height:130%;
+	color:#0099CC;
+        font-weight:700;
+}
+
+.detail .title {
+  height: 100%;
+  overflow: visible;
+}
+
+.detail {
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#F5F5F5));
+	border: 1px solid #E5E5E5;
+	-webkit-border-radius:5px;
+	padding:6px;
+        margin-top: 2px;
+	width:445px;
+        min-height:90px;
+}
+
+.featured {
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#F5F5F5));
+	border: 1px solid #0099CC;
+	-webkit-border-radius:5px;
+	padding:6px;
+        margin-top: 6px;
+	width:445px;
+        min-height:90px;
+}
+
+.thread {
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#F5F5F5));
+	border: 1px solid #E5E5E5;
+	-webkit-border-radius:5px;
+	padding:6px;
+        margin-top: 6px;
+	width:445px;
+}
+
+.title a{
+	color:#0099CC;
+}
+
+.description {
+	margin-top:7px;
+	font-size:12px;
+        overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 12pt;
+}
+
+.thumbnail {
+    float:left;
+    width: 100px;
+    height: 90px;
+    margin-right: 5px;
+}
+
+#header {
+    color: #CCC;
+    background: black url('../img/body_bg.jpg') repeat-x left top;
+    font: normal 12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.headerleft {
+    float:left;
+}
+.headerright {
+    float:right;
+}
+
+#footer  {
+
+    position: fixed;
+    z-index: 100;
+  background: #000;
+    bottom: 0px;
+    color: #999;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+}

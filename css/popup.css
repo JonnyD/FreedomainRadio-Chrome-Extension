@@ -1,0 +1,17 @@
+/*
+    The Freedomain Radio Extension for Google Chrome
+    Author: Jonathan Devine <jonny.irl@gmail.com>
+    License: GPLv3
+*/
+
+body
+{
+    color: #CCC;
+	background: black url('../img/body_bg.jpg') repeat-x left top;
+	font: normal 12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#logo:hover
+{
+	cursor: pointer;
+}

@@ -1,0 +1,31 @@
+{
+"update_url":"http://clients2.google.com/service/update2/crx",
+    "name": "FreedomainRadio",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "FreedomainRadio - The Largest and Most Popular Philosophy Conversation in the World!",
+    "icons": { "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "117": "img/icon117.png" },
+    "background": {
+        "scripts": [
+            "js/jquery.min.js",
+            "js/moment.min.js",
+            "background.js"
+        ]
+    },
+    "options_page": "options.html",
+    "browser_action": {
+        "default_icon": "img/fdricon.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "storage",
+        "notifications",
+        "background",
+        "http://fdrpodcast.com/",
+        "http://*.freedomainradio.com/",
+        "http://gdata.youtube.com/feeds/api/users/stefbot/uploads?v=2&alt=jsonc",
+        "http://pipes.yahoo.com/pipes/pipe.run?_id=e5f849875fd5f61b23e5d7f79873d9c9&_render=json"
+    ]
+}

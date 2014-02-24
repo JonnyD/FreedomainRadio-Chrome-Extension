@@ -1,0 +1,102 @@
+<!--
+    The Freedomain Radio Extension for Google Chrome
+    Author: Jonathan Devine <jonny.irl@gmail.com>
+    License: GPLv3
+-->
+
+<html>
+    <head>
+        <title>Options - FreedomainRadio</title>
+        <link rel="stylesheet" href="css/options.css" type="text/css" />
+        <script type="text/javascript">
+            function loadOptions() {
+                if (localStorage.types != undefined) {
+                    var checked = localStorage.types.split(";");
+                    
+                    for (var i = 0; i < checked.length; i++) {
+                        var temp = checked[i].split(":");
+                        
+                        document.getElementById(temp[0]).checked = (temp[1] == "true") ? "checked": "";
+                    }
+                }
+                
+                document.getElementById("interval").value = localStorage.updateInterval;
+            }
+            
+            function saveOptions() {
+                var interval = parseInt(document.getElementById("interval").value);
+                
+                if (interval < 1 || isNaN(interval)) {
+                    alert("The entered value is invalid!");
+                } else {
+                    var checked = [];
+                    var count = 0;
+                    var checkboxes = document.getElementsByName("checkbox");
+                    
+                    for (var i = 0; i < checkboxes.length; i++) {
+                        var cbxState = checkboxes[i].checked;
+                        checked[i] = checkboxes[i].id + ":" + cbxState;
+                        
+                        if (cbxState) {
+                            count++;
+                        }
+                    }
+                    
+                    if (count > 0) {
+                        localStorage.types = checked.join(";");
+                        alert("Your settings have been saved!");
+                    } else {
+                        alert("You should select at least one feed type to keep track of!");
+                    }
+                    
+                    localStorage.updateInterval = interval;
+                }
+            }
+            
+            function openTab(url) {
+                chrome.tabs.create({url: url});
+            }
+        </script>
+    </head>
+    <body onload="loadOptions();">
+        <div id="wrapper">
+            <img src="img/fdrchromelogo.png" id="logo" alt="Freedomain Radio" title="Freedomain Radio" onclick="openTab('http://freedomainradio.com');" />
+            <fieldset>
+                <legend>General</legend>
+                <table>
+                    <tr>
+                        <td class="label">
+                            <label for="interval">Update interval (minutes): </label>
+                        </td>
+                        <td>
+                            <input type="text" name="interval" id="interval" size="2" value="5"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>What do you want showing up in the latest feed?</legend>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="podcast">Podcasts</label>
+                                <input type="checkbox" checked="checked" name="checkbox" id="podcast" />
+                            </td>
+                            <td>
+                                <label for="video">Videos</label>
+                                <input type="checkbox" checked="checked" name="checkbox" id="video" />
+                            </td>
+                            <td>
+                                <label for="topic">New Topics</label>
+                                <input type="checkbox" checked="checked" name="checkbox" id="topic" />
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </fieldset>
+            <input type="button" class="save" value="Save" onclick="saveOptions();" />
+        </div>
+    </body>
+</html>
